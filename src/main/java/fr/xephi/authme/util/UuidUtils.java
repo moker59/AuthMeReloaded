@@ -6,13 +6,19 @@ import java.util.UUID;
 /**
  * Utility class for various operations on UUID.
  */
-public final class UUIDUtils {
+public final class UuidUtils {
 
     // Utility class
-    private UUIDUtils() {
+    private UuidUtils() {
     }
 
-    public static Optional<UUID> parseUUIDSafely(String string) {
+    /**
+     * Returns whether the given string as an UUID or an empty option
+     *
+     * @param string the uuid to parse
+     * @return parsed UUID if succeed or an empty option
+     */
+    public static Optional<UUID> parseUuidSafely(String string) {
         try {
             return Optional.of(UUID.fromString(string));
         } catch (IllegalArgumentException | NullPointerException ex) {

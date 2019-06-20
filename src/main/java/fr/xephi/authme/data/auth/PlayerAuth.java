@@ -171,9 +171,13 @@ public class PlayerAuth {
         this.totpKey = totpKey;
     }
 
-    public UUID getUuid() { return uuid; }
+    public UUID getUuid() {
+        return uuid;
+    }
 
-    public void setUuid(UUID uuid) { this.uuid = uuid; }
+    public void setUuid(UUID uuid) {
+        this.uuid = uuid;
+    }
 
     @Override
     public boolean equals(Object obj) {

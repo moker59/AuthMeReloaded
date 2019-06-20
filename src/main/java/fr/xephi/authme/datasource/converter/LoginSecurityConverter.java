@@ -121,7 +121,7 @@ public class LoginSecurityConverter implements Converter {
             .map(Timestamp::getTime).orElse(null);
         long regDate = Optional.ofNullable(resultSet.getDate("registration_date"))
             .map(Date::getTime).orElse(System.currentTimeMillis());
-        UUID uuid = Utils.parseUUIDSafely(resultSet.getString("unique_user_id"));
+        UUID uuid = Utils.parseUuidSafely(resultSet.getString("unique_user_id"));
         return PlayerAuth.builder()
             .name(name)
             .realName(name)

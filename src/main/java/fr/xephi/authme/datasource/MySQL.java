@@ -23,7 +23,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Optional;
 import java.util.Set;
 import java.util.UUID;
 
@@ -462,8 +461,8 @@ public class MySQL extends AbstractSqlDataSource {
     private PlayerAuth buildAuthFromResultSet(ResultSet row) throws SQLException {
         String salt = col.SALT.isEmpty() ? null : row.getString(col.SALT);
         int group = col.GROUP.isEmpty() ? -1 : row.getInt(col.GROUP);
-        UUID uuid = col.PLAYER_UUID.isEmpty() ?
-            null : Utils.parseUUIDSafely(row.getString(col.PLAYER_UUID));
+        UUID uuid = col.PLAYER_UUID.isEmpty()
+            ? null : Utils.parseUuidSafely(row.getString(col.PLAYER_UUID));
         return PlayerAuth.builder()
             .name(row.getString(col.NAME))
             .realName(row.getString(col.REAL_NAME))

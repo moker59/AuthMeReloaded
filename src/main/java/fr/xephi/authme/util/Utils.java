@@ -111,11 +111,11 @@ public final class Utils {
     /**
      * Returns whether the given string as an UUID or null
      *
-     * TODO: return an option instead of null
      * @param string the uuid to parse
      * @return parsed UUID if succeed or null
      */
-    public static UUID parseUUIDSafely(String string) {
-        return UUIDUtils.parseUUIDSafely(string).orElse(null);
+    public static UUID parseUuidSafely(String string) {
+        // TODO Xephi 20190620: return an option instead of null
+        return UuidUtils.parseUuidSafely(string).orElse(null);
     }
 }
