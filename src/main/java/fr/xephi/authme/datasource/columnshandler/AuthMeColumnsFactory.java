@@ -5,6 +5,7 @@ import ch.jalu.datasourcecolumns.ColumnType;
 import ch.jalu.datasourcecolumns.StandardTypes;
 import fr.xephi.authme.data.auth.PlayerAuth;
 
+import java.util.UUID;
 import java.util.function.Function;
 
 /**

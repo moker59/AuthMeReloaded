@@ -6,6 +6,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
 
 import java.util.Collection;
+import java.util.UUID;
 import java.util.regex.Pattern;
 
 /**
@@ -105,5 +106,16 @@ public final class Utils {
      */
     public static boolean isEmailEmpty(String email) {
         return StringUtils.isEmpty(email) || "your@email.com".equalsIgnoreCase(email);
+    }
+
+    /**
+     * Returns whether the given string as an UUID or null
+     *
+     * TODO: return an option instead of null
+     * @param string the uuid to parse
+     * @return parsed UUID if succeed or null
+     */
+    public static UUID parseUUIDSafely(String string) {
+        return UUIDUtils.parseUUIDSafely(string).orElse(null);
     }
 }
