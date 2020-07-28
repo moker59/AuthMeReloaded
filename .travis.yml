@@ -8,3 +8,15 @@ jdk:
 cache:
   directories:
     - '$HOME/.m2/repository'
+
+script: mvn install
+
+deploy:
+  provider: releases
+  skip_cleanup: true
+  api_key: $GH_TOKEN
+  file_glob: true
+  file:
+    - "target/*.jar"
+  on:
+    tags: true
