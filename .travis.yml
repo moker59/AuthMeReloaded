@@ -9,7 +9,7 @@ cache:
   directories:
     - '$HOME/.m2/repository'
 
-script: mvn install
+#script: mvn install
 
 deploy:
   provider: releases
